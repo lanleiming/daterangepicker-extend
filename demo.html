@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+   <head>
+      <meta charset="UTF-8" />
+      <title>daterangepicker汉化及扩展</title>
+      <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" media="all" href="daterangepicker.css" />
+      <script type="text/javascript" src="jquery.min.js"></script>
+      <script type="text/javascript" src="bootstrap.min.js"></script>
+      <script type="text/javascript" src="moment.min.js"></script>
+      <script type="text/javascript" src="daterangepicker.js"></script>
+
+
+   </head>
+   <body style="margin: 60px 0">
+      <div class="container">
+        <h1 style="margin: 0 0 20px 0;text-align: center;">daterangepicker汉化及扩展</h1>
+        <div class="row">
+          <input type="text" id="config-demo" class="form-control width200 inline-block" />
+        </div>
+      </div>
+
+      <style type="text/css">
+        .inline-block{
+          display:inline-block !important;
+        }
+        .width200{
+          width:200px !important;
+        }
+        .width150{
+          width:150px !important;
+        }
+
+      </style>
+
+      <script type="text/javascript">
+      $(document).ready(function() {
+          $('#config-demo').daterangepicker();
+      });
+      </script>
+
+   </body>
+</html>
