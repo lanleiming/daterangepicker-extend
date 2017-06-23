@@ -11,5 +11,5 @@
 
 ## 使用方法
 > 1、替换掉原先的 *daterangepicker.js* 文件。  
-> 2、调用方法和原先一样。 $('#config-demo').daterangepicker();  
+> 2、调用方法和原先一样。 $('#config-demo').daterangepicker();
 > 3、可以浏览demo.html 查看效果
