@@ -73,14 +73,14 @@
         this.cancelClass = 'btn-default';
 
         this.locale = {
-            format: 'MM/DD/YYYY',
-            separator: ' - ',
+            format: 'YYYY-MM-DD',
+            separator: ' 至 ',
             applyLabel: 'Apply',
             cancelLabel: 'Cancel',
             weekLabel: 'W',
             customRangeLabel: 'Custom Range',
-            daysOfWeek: moment.weekdaysMin(),
-            monthNames: moment.monthsShort(),
+            daysOfWeek: [ '日', '一', '二', '三', '四', '五', '六' ],
+            monthNames:  [ '一月', '二月', '三月', '四月', '五月', '六月','七月', '八月', '九月', '十月', '十一月', '十二月' ],
             firstDay: moment.localeData().firstDayOfWeek()
         };
 
@@ -204,15 +204,11 @@
                 }
                 _this.startDate = moment(c_start_date);
                 _this.endDate = moment(c_end_date);
-                timespanStr =auto0(c_start_date.getMonth()+1)+'/'+ auto0(c_start_date.getDate()) + '/'+c_start_date.getFullYear()+'-'+ auto0(c_end_date.getMonth()+1) + '/' +auto0(c_end_date.getDate()) + '/' +c_end_date.getFullYear();
-                _this.element.val(timespanStr);
+                _this.element.val(_this.startDate.format(_this.locale.format) + _this.locale.separator + _this.endDate.format(_this.locale.format));
                 _this.element.focus();
                 _this.element.blur();
                 _this.hide();
                 /* 扩展该组件 end  */
-
-
-
             });
         }
 
@@ -601,6 +597,7 @@
                 }
             }
             if (this.endDate) {
+                this.hide();
                 this.container.find('input[name="daterangepicker_end"]').removeClass('active');
                 this.container.find('input[name="daterangepicker_start"]').addClass('active');
             } else {
